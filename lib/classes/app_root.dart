@@ -11,7 +11,6 @@ class AppRoot extends StatefulWidget {
 }
 
 class _AppRootState extends State<AppRoot> {
-
   //是否显示广告
   bool _isShowAd = true;
 
@@ -34,24 +33,33 @@ class _AppRootState extends State<AppRoot> {
           offstage: !_isShowAd,
           child: SafeArea(
               child: Align(
-                alignment: Alignment(0.9, -1.0),
-                child: Container(
-                  color: Colors.red,
-                  width: 50.0,
-                  height: 50.0,
-                  child: RevanCountDown(countDownFinishCallBack: (){
-                    print('倒计时结束');
-                    setState(() {
-                      _isShowAd = false;
-                    });
-                  }),
-                ),
-              )
-          ),
+            alignment: Alignment(0.9, -1.0),
+            child: Container(
+              width: 40.0,
+              height: 40.0,
+              child: RevanCountDown(
+                seconds: 5,
+                countDownFinishCallBack: () {
+                  print('倒计时结束');
+                  setState(() {
+                  _isShowAd = false;
+                  });
+                },
+                onClickCallBack: (){
+                  print('结束倒计时');
+                  setState(() {
+                    _isShowAd = false;
+                  });
+                },
+              ),
+              decoration: BoxDecoration(
+                color: Color(0x99999999),
+                borderRadius: const BorderRadius.all(Radius.circular(20.0)),
+              ),
+            ),
+          )),
         )
-
       ],
     );
   }
 }
-

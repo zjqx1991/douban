@@ -6,11 +6,13 @@ import 'dart:async';
 */
 class RevanCountDown extends StatefulWidget {
   ///倒计时结束回调
+  final int seconds;
   final countDownFinishCallBack;
   final onClickCallBack;
 
   RevanCountDown({
     Key key,
+    @required this.seconds,
     @required this.countDownFinishCallBack,
     this.onClickCallBack
   }) : super(key: key);
@@ -25,7 +27,7 @@ class RevanCountDown extends StatefulWidget {
 class _RevanCountDownState extends State<RevanCountDown> {
 
   //倒计时时间
-  int _seconds = 5;
+  int _seconds;
   //定时器
   Timer _timer;
 
@@ -35,7 +37,7 @@ class _RevanCountDownState extends State<RevanCountDown> {
         Duration(seconds: 1),
         (timer){
           setState(() {
-            if (_seconds <= 0) {
+            if (_seconds <= 1) {
               widget.countDownFinishCallBack();
               _cancelTimer();
               return;
@@ -55,6 +57,7 @@ class _RevanCountDownState extends State<RevanCountDown> {
   @override
   void initState() {
     super.initState();
+    _seconds = widget.seconds;
     _startTimer();
   }
 
@@ -64,10 +67,15 @@ class _RevanCountDownState extends State<RevanCountDown> {
     _cancelTimer();
   }
 
+  void _onClickPressed() {
+    _cancelTimer();
+    widget.onClickCallBack();
+  }
+
   @override
   Widget build(BuildContext context) {
     return FlatButton(
-        onPressed: widget.onClickCallBack,
+        onPressed: _onClickPressed,
         child: Text(
           '$_seconds',
           style: TextStyle(
