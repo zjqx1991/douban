@@ -45,7 +45,21 @@ flutter:
     #splash
     - assets/images/splash/splash.png
     - assets/images/splash/dou_icon.png
+    #tabbar
+    - assets/images/tabbar/tabbar_home_normal.png
+    - assets/images/tabbar/tabbar_home_select.png
 
+    - assets/images/tabbar/tabbar_book_normal.png
+    - assets/images/tabbar/tabbar_book_select.png
+
+    - assets/images/tabbar/tabbar_group_normal.png
+    - assets/images/tabbar/tabbar_group_select.png
+
+    - assets/images/tabbar/tabbar_fair_normal.png
+    - assets/images/tabbar/tabbar_fair_select.png
+
+    - assets/images/tabbar/tabbar_person_normal.png
+    - assets/images/tabbar/tabbar_person_select.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
