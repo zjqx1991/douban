@@ -8,6 +8,10 @@ class Splash extends StatefulWidget {
 }
 
 class _SplashState extends State<Splash> {
+
+  //是否显示广告
+  bool _ishowAD = true;
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -15,6 +19,7 @@ class _SplashState extends State<Splash> {
       color: Colors.yellow,
       child: Stack(
         children: <Widget>[
+          //根控制器
 
         ],
       ),

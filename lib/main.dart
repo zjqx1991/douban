@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'classes/splash.dart';
-
+import 'classes/app_root.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,7 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: _mainTheme,
-      home: Splash(),
+      home: AppRoot(),
     );
   }
 }
