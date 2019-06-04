@@ -98,6 +98,13 @@ class _RootPageState extends State<RootPage> {
 
   ];
 
+  //4、切换tabbar
+  void _onClickTap(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+  }
+
   @override
   void initState() {
     super.initState();
@@ -135,9 +142,10 @@ class _RootPageState extends State<RootPage> {
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         selectedItemColor: Theme.of(context).primaryColor,
-          unselectedItemColor: Colors.black45,
-          currentIndex: _currentIndex,
-          items: _itemList
+        unselectedItemColor: Colors.black45,
+        currentIndex: _currentIndex,
+        items: _itemList,
+        onTap: _onClickTap,
       ),
     );
   }
